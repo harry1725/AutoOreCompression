@@ -1,0 +1,5 @@
+name: AutoOreCompression
+version: '${project.version}'
+main: com.k5na.autoorecompression.AutoOreCompression
+api-version: 1.19
+authors: [ Derman_e ]
