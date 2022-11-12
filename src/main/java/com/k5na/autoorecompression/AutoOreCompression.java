@@ -4,12 +4,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapelessRecipe;
@@ -19,8 +17,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Arrays;
 import java.util.Map;
-
-import static org.bukkit.entity.EntityType.PLAYER;
 
 public final class AutoOreCompression extends JavaPlugin implements Listener {
 
@@ -81,78 +77,6 @@ public final class AutoOreCompression extends JavaPlugin implements Listener {
     @Override
     public void onDisable() {
         super.onDisable();
-    }
-
-    @EventHandler
-    public void onPlayerPickupItemEvent(EntityPickupItemEvent event) {
-        Entity entity = event.getEntity();
-
-        if (entity.getType() == PLAYER) {
-            Player player = (Player) entity;
-            Inventory inventory = player.getInventory();
-
-            if (player.isOp()) {
-                if (invEmpty(player)) {
-                    if (removeItem(player, Material.COAL, 9)) {
-                        inventory.addItem(new ItemStack(Material.COAL_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.RAW_COPPER, 9)) {
-                        inventory.addItem(new ItemStack(Material.RAW_COPPER_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.COPPER_INGOT, 9)) {
-                        inventory.addItem(new ItemStack(Material.COPPER_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.RAW_IRON, 9)) {
-                        inventory.addItem(new ItemStack(Material.RAW_IRON_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.IRON_NUGGET, 9)) {
-                        inventory.addItem(new ItemStack(Material.IRON_INGOT));
-                    }
-
-                    if (removeItem(player, Material.IRON_INGOT, 9)) {
-                        inventory.addItem(new ItemStack(Material.IRON_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.LAPIS_LAZULI, 9)) {
-                        inventory.addItem(new ItemStack(Material.LAPIS_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.RAW_GOLD, 9)) {
-                        inventory.addItem(new ItemStack(Material.RAW_GOLD_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.GOLD_NUGGET, 9)) {
-                        inventory.addItem(new ItemStack(Material.GOLD_INGOT));
-                    }
-
-                    if (removeItem(player, Material.GOLD_INGOT, 9)) {
-                        inventory.addItem(new ItemStack(Material.GOLD_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.REDSTONE, 9)) {
-                        inventory.addItem(new ItemStack(Material.REDSTONE_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.DIAMOND, 9)) {
-                        inventory.addItem(new ItemStack(Material.DIAMOND_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.EMERALD, 9)) {
-                        inventory.addItem(new ItemStack(Material.EMERALD_BLOCK));
-                    }
-
-                    if (removeItem(player, Material.WHEAT, 9)) {
-                        inventory.addItem(new ItemStack(Material.HAY_BLOCK));
-                    }
-
-                    player.updateInventory();
-                }
-            }
-        }
     }
 
     @EventHandler

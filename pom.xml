@@ -6,7 +6,7 @@
 
     <groupId>com.k5na</groupId>
     <artifactId>AutoOreCompression</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <name>AutoOreCompression</name>
