@@ -68,8 +68,7 @@ public final class AutoOreCompression extends JavaPlugin implements Listener {
         pManager.registerEvents(this, this);
         console(ChatColor.YELLOW + "onPlayerPickupItemEvent" + ChatColor.WHITE + " is now enabled!");
 
-        ShapelessRecipe quartz = new ShapelessRecipe(new NamespacedKey(this, NamespacedKey.MINECRAFT), new ItemStack(Material.QUARTZ, 4))
-                .addIngredient(Material.QUARTZ_BLOCK);
+        ShapelessRecipe quartz = new ShapelessRecipe(new NamespacedKey(this, NamespacedKey.MINECRAFT), new ItemStack(Material.QUARTZ, 4)).addIngredient(Material.QUARTZ_BLOCK);
 
         Bukkit.addRecipe(quartz);
         console(ChatColor.YELLOW + "ShapelessRecipe" + ChatColor.WHITE + " is now enabled!");
